@@ -1,10 +1,7 @@
 import os
 
-import downloadFromBucket
-import joinMongoAndPatientData
-import processDataAndUploadToMongoDB
-import uploadToBucket
-import visualize
+from scripts import downloadFromBucket, joinMongoAndPatientData, processDataAndUploadToMongoDB, visualize, \
+    uploadToBucket
 
 
 def main():

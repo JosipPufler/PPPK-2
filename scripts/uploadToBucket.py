@@ -23,7 +23,7 @@ def run():
     else:
        print("Bucket already exists")
     only_files = [f for f in listdir(folder_path) if isfile(join(folder_path, f)) and f.endswith(".tsv")]
-    executor = concurrent.futures.ThreadPoolExecutor(3)
+    executor = concurrent.futures.ThreadPoolExecutor(2)
     futures = [executor.submit(upload, folder_path, file) for file in only_files]
     concurrent.futures.wait(futures)
 

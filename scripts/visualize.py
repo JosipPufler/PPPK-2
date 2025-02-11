@@ -1,4 +1,5 @@
 from os import path
+from pathlib import Path
 
 import pandas as pd
 import seaborn as sns
@@ -11,6 +12,8 @@ import properties
 
 def run():
     visualization_folder = 'visualizations'
+    Path(visualization_folder).mkdir(parents=True, exist_ok=True)
+
     client = MongoClient(properties.CLUSTER_URI, server_api=ServerApi('1'))
     collection = client['PPPK']['TCGA']
     documents = collection.find({})
